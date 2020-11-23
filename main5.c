@@ -7,22 +7,21 @@ int main(int arc, char *argv[]) {
 	
 
 	FILE *fp;
+	//char c;
 	char str[100];
-	int i;
 	
 	fp = fopen("sample.txt", "w");
-	if (fp == NULL)a
+	if (fp == NULL)
 	{
 		return -1;
-	}
-	
-	for(i=0;i<3;i++)
-	{
-		printf("Input a word : ");
-		scanf("%s", str);
-		fprintf(fp, "%s\n", str);
-	}
-	
+	 } 
+
+ 	//while ((c=fgetc(fp)) !=E0F) {
+ 	while (fgets(str, 100, fp) !=NULL) {
+ 			//printf("%c",c);
+ 			printf("%s", str);
+	 }
+
 	fclose(fp);
 	
 	return 0;
